@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Toast = ({message, show, onClose, className}) => {
   return (
-    <div className={`fixed bottom-2 transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`fixed z-10 top-10 flex justify-center items-center transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
       <div className={className}>
         <span>{message}</span>
         <button className="ml-4 bg-transparent text-white" onClick={onClose}>
