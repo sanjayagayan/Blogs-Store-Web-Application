@@ -71,49 +71,51 @@ function Home() {
             </span>
             <span className="flex border-t border-[#757575]/30 w-[40%] md:w-[80%] h-0"></span>
           </div>
-          {blogs && blogs.length > 0 ? (
-            blogs.map((item) => {
-              return (
-                <div
-                  key={item._id}
-                  className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 pb-8"
-                >
-                  <div className="rounded-xl overflow-hidden shadow-lg">
-                    <div className="relative">
-                      {/* Thumbnail */}
-                      <img
-                        className="w-full bg-cover"
-                        src={`http://localhost:5000/${item.thumbnail}`}
-                        alt="Thumbnail"
-                      />
-                      <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
-                      {/* Category */}
-                      <div className="absolute bottom-0 left-0 bg-purple-500 px-4 py-2 text-white text-sm hover:bg-blue-500 hover:text-white transition duration-500 ease-in-out cursor-pointer">
-                        :: {item.category.title}
+          <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 pb-8">
+              {blogs && blogs.length > 0 ? (
+                blogs.map((item) => {
+                  return (
+                    <div
+                      key={item._id}
+                    >
+                      <div className="rounded-xl overflow-hidden shadow-lg">
+                        <div className="relative">
+                          {/* Thumbnail */}
+                          <img
+                            className="w-full bg-cover"
+                            src={`http://localhost:5000/${item.thumbnail}`}
+                            alt="Thumbnail"
+                          />
+                          <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                          {/* Category */}
+                          <div className="absolute bottom-0 left-0 bg-purple-500 px-4 py-2 text-white text-sm hover:bg-blue-500 hover:text-white transition duration-500 ease-in-out cursor-pointer">
+                            :: {item.category.title}
+                          </div>
+                        </div>
+                        <div className="px-6 py-4">
+                          <h1 className="font-semibold text-lg inline-block hover:text-purple-600 transition duration-500 ease-in-out">
+                            {item.title}
+                          </h1>
+                          <p className="text-gray-500 text-sm py-2">
+                            {item.description}
+                          </p>
+                        </div>
+                        <div className="px-6 pb-6 flex flex-row justify-between items-center">
+                          <Link to={`/blog/${item._id}`}>
+                            <h1 className="text-sm text-purple-600 underline cursor-pointer">
+                              Read More
+                            </h1>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                    <div className="px-6 py-4">
-                      <h1 className="font-semibold text-lg inline-block hover:text-purple-600 transition duration-500 ease-in-out">
-                        {item.title}
-                      </h1>
-                      <p className="text-gray-500 text-sm py-2">
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="px-6 pb-6 flex flex-row justify-between items-center">
-                      <Link to={`/blog/${item._id}`}>
-                        <h1 className="text-sm text-purple-600 underline cursor-pointer">
-                          Read More
-                        </h1>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          ) : (
-            <h2>Loading...</h2>
-          )}
+                  );
+                })
+              ) : (
+                <h2>Loading...</h2>
+              )}
+          </div>
+          
         </div>
       </main>
     </>
