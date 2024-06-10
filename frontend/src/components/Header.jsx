@@ -4,6 +4,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+
 const Header = () => {
   const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Header = () => {
         setShowToast(false);
         navigate("/login");
       }, 1000);
+      
     } catch (error) {
       console.error("Logout error:", error);
     }
