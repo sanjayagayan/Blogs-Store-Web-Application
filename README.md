@@ -111,7 +111,7 @@ git push origin feature-branch
 ```
 4.Create a new Pull Request.
 
-Contact
+## Contact
 If you have any questions or suggestions, please contact me at sanjayagayan.me@gmail.com or [sanjayagayan](https://sanjayagayan.me/)
 
 Happy Blogging! 🚀
